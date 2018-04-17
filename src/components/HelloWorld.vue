@@ -3,27 +3,39 @@
     <h1>{{ msg }}</h1>
     <h2>Heading 2</h2>
     <h3>Heading 3</h3>
-    <button>Button</button>
-    <p>
-      This is paragraph text
-    </p>
+    <FooterButton label='footer button'></FooterButton>
+
+      <HeaderButton label='header button'></HeaderButton>
+
+    <p>This is paragraph text</p>
   </div>
 </template>
 
 <script>
+import FooterButton from './FooterButton.vue'
+import HeaderButton from './HeaderButton.vue'
+
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String,
+  components: {
+    FooterButton,
+    HeaderButton
   },
-};
+  props: {
+    msg: String
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang='scss' scoped>
+@import '../stylesheets/variables';
 
-  button {
-    background: $black;
-    padding: 30px;
-  }
+.hello {
+  background: $pistachio;
+}
+.hello * {
+  padding: 20px;
+  margin: 20px;
+}
 </style>
