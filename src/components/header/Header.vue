@@ -45,7 +45,7 @@ export default {
 .header-container {
   background-color: $transparent-gray;
   color: $black;
-  border-style: none;
+  border-bottom: 1px solid $gray;
   position: absolute;
   width: 100vw;
   top: 0;

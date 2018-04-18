@@ -3,6 +3,7 @@
 
     <mq-layout mq='sm'>
       <!-- <a href="#" v-on:click.prevent="showDropDown=!showDropDown"> -->
+      <!-- TODO: add slideout modal -->
       <Hamburger></Hamburger>
       <!-- </a> -->
       <ul v-if='showDropDown'>

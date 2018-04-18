@@ -1,7 +1,7 @@
 <template>
-  <nav class='footer-container'>
+  <nav class='footer-container' :class="$mq">
     <div v-for="(url,title) in links" :key='url.id'>
-      <a :href='url'><h3>{{title}}</h3></a>
+      <a :href='url'><h3 :class="$mq">{{title}}</h3></a>
     </div>
   </nav>
 </template>
@@ -24,21 +24,35 @@ export default {
 
 <style lang='scss' scoped>
 @import '../stylesheets/variables';
-nav {
+
+.footer-container {
   background-color: $black;
   border-style: none;
   width: 100vw;
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding: 20px;
   height: 120px;
+  &.sm{
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  }
+  &.lg{
+    align-items: center;
+    height: 84px;
+    padding-left: 142px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }
 h3{
   color: $white;
-  padding: 5px;
+  padding-top: 24px;
+  padding-left: 24px;
+  &.lg{
+    padding-right: 78px;
+  }
 }
 
 </style>
