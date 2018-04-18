@@ -13,5 +13,7 @@ export default {
   img {
     color: $black;
     filter: invert(100%);
+    height: 36px;
+    width: 36px;
   }
 </style>

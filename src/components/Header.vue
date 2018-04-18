@@ -2,13 +2,13 @@
   <nav class='header-container'>
     <NavLinks/>
     <Logo />
-    <Icon type='cart' />
+    <Cart />
   </nav>
 </template>
 
 <script>
 import NavLinks from './NavLinks.vue'
-import Icon from './Icon.vue'
+import Cart from './Cart.vue'
 import Logo from './Logo.vue'
 
 export default {
@@ -18,7 +18,7 @@ export default {
   },
   components: {
     NavLinks,
-    Icon,
+    Cart,
     Logo
   }
 }
@@ -34,6 +34,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  height: 60px;
 }
 
 </style>

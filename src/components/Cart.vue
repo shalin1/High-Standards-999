@@ -1,4 +1,4 @@
-<template v-if='true'>
+<template>
   <svg id='cart' width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
       <defs></defs>
@@ -13,13 +13,10 @@
       </g>
   </svg>
 </template>
-<template v-else>
-  <h2>NICE</h2>
-</template>
 
 <script>
 export default {
-  name: 'Icon',
+  name: 'Cart',
   props: {
     type: String,
   }
@@ -29,6 +26,6 @@ export default {
 <style lang='scss' scoped>
 @import '../stylesheets/variables';
 #cart{
-
+  width: 19.7px;
 }
 </style>

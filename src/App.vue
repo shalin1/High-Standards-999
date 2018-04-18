@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <Header/>
+    <HeroArea/>
+
+
   </div>
 </template>
 
