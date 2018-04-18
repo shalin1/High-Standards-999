@@ -45,7 +45,8 @@ export default {
 .header-container {
   background-color: $transparent-gray;
   color: $black;
-  border-bottom: 1px solid $gray;
+  // border-bottom: 1px solid $gray;
+  // weird, this is in spec but wildly different than render. hmmm.
   position: absolute;
   width: 100vw;
   top: 0;

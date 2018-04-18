@@ -4,13 +4,8 @@
     <mq-layout mq='sm'>
       <!-- <a href="#" v-on:click.prevent="showDropDown=!showDropDown"> -->
       <!-- TODO: add slideout modal -->
-      <Hamburger></Hamburger>
+      <Hamburger />
       <!-- </a> -->
-      <ul v-if='showDropDown'>
-        <li v-for='(url,title) in links' :key='url.id'>
-          <a href='url'><h3>{{title}}</h3></a>
-        </li>
-      </ul>
     </mq-layout>
 
     <mq-layout mq='lg'>
