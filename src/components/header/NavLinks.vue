@@ -1,13 +1,14 @@
 <template>
   <nav>
-    <a href="#" v-on:click.prevent="showDropDown=!showDropDown">
-      <Hamburger></Hamburger>
-    </a>
-    <!-- <div>
-      <ul>
-        <NavLink v-for="link in links" class="list" v-bind:key="link.id">{{link.name}}</NavLink>
+      <!-- <a href="#" v-on:click.prevent="showDropDown=!showDropDown"> -->
+        <Hamburger></Hamburger>
+      <!-- </a> -->
+      <ul v-if='showDropDown'>
+        <li v-for='(url,title) in links' :key='url.id'>
+          <a href='url'><h3>{{title}}</h3></a>
+        </li>
       </ul>
-    </div> -->
+
   </nav>
 </template>
 
@@ -21,19 +22,35 @@ export default {
     NavLink,
     Hamburger
   },
-  data: function () {
+  data () {
     return {
       showDropDown: false,
-      links: [
-        { name: 'Men' },
-        { name: 'Women' },
-        { name: 'Magazine' },
-        { name: 'Stores' }
-      ]
+      links: {
+        'Men': '#',
+        'Women': '#',
+        'Magazine': '#',
+        'Store': '#'
+      }
     }
   }
 }
 </script>
 
 <style lang='scss' scoped>
+@import '../../stylesheets/variables';
+nav {
+  position: relative;
+}
+a {
+  position: relative;
+}
+ul{
+  position: absolute;
+left: -1px;
+overflow: hidden;
+background: $transparent-gray;
+}
+li{
+  display: block;
+}
 </style>

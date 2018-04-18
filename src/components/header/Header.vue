@@ -27,7 +27,7 @@ export default {
 <style lang='scss' scoped>
 @import '../../stylesheets/variables';
 .header-container {
-  background-color: rgba(32, 47, 47, 0.1);
+  background-color: $transparent-gray;
   color: $black;
   border-style: none;
   position: absolute;
