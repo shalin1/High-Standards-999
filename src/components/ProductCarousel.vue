@@ -5,9 +5,13 @@
     <h2>Shop New Arrivals</h2>
   </section>
   <section class='product-carousel'>
-    <li v-for="item of items" v-bind:key="item.id">
-      {{item.title}}
-    </li>
+    <div class='product-carousel-item' v-for="item of items" v-bind:key="item.id">
+      <img :src='item.images[0].src' />
+      <div class='item-info'>
+        <h3>{{item.title}}</h3>
+        <p>${{item.variants[0].price}}</p>
+      </div>
+    </div>
   </section>
   </div>
 </template>
@@ -41,5 +45,28 @@ export default {
 @import '../stylesheets/variables';
 h2 {
   padding: 30px 20px;
+}
+.product-carousel{
+  background-color: $light-gray;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.product-carousel-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 50vw;
+  border: 1px solid $gray;
+}
+.item-info{
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+img {
+  width: 100%;
 }
 </style>
