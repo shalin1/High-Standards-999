@@ -1,0 +1,195 @@
+
+    // sampleJson: [
+    //   {
+    //     id: 607882674235,
+    //     title: 'Active Jacket',
+    //     handle: 'active-jacket',
+    //     body_html: '',
+    //     published_at: '2018-04-17T11:07:00-04:00',
+    //     created_at: '2018-04-17T11:08:23-04:00',
+    //     updated_at: '2018-04-17T11:08:28-04:00',
+    //     vendor: 'highstandards999',
+    //     product_type: '',
+    //     tags: [],
+    //     variants: [
+    //       {
+    //         id: 7430656491579,
+    //         title: 'Default Title',
+    //         option1: 'Default Title',
+    //         option2: null,
+    //         option3: null,
+    //         sku: '',
+    //         requires_shipping: true,
+    //         taxable: true,
+    //         featured_image: null,
+    //         available: true,
+    //         price: '398.00',
+    //         grams: 680,
+    //         compare_at_price: null,
+    //         position: 1,
+    //         product_id: 607882674235,
+    //         created_at: '2018-04-17T11:08:23-04:00',
+    //         updated_at: '2018-04-17T11:08:23-04:00'
+    //       }
+    //     ],
+    //     images: [
+    //       {
+    //         id: 2474686382139,
+    //         created_at: '2018-04-17T11:08:28-04:00',
+    //         position: 1,
+    //         updated_at: '2018-04-17T11:08:28-04:00',
+    //         product_id: 607882674235,
+    //         variant_ids: [],
+    //         src:
+    //           'https://cdn.shopify.com/s/files/1/0024/2882/9755/products/baa6a2c3c8895c8ae88112ba5014e7a582534441.png?v=1523977708',
+    //         width: 1711,
+    //         height: 1971
+    //       }
+    //     ],
+    //     options: [{ name: 'Title', position: 1, values: ['Default Title'] }]
+    //   },
+    //   {
+    //     id: 607880020027,
+    //     title: 'Denim Cut-Off Jacket',
+    //     handle: 'denim-cut-off-jacket',
+    //     body_html: '',
+    //     published_at: '2018-04-17T11:05:31-04:00',
+    //     created_at: '2018-04-17T11:06:47-04:00',
+    //     updated_at: '2018-04-17T11:06:53-04:00',
+    //     vendor: 'highstandards999',
+    //     product_type: '',
+    //     tags: [],
+    //     variants: [
+    //       {
+    //         id: 7430618841147,
+    //         title: 'Default Title',
+    //         option1: 'Default Title',
+    //         option2: null,
+    //         option3: null,
+    //         sku: '555555',
+    //         requires_shipping: true,
+    //         taxable: true,
+    //         featured_image: null,
+    //         available: true,
+    //         price: '398.00',
+    //         grams: 2722,
+    //         compare_at_price: null,
+    //         position: 1,
+    //         product_id: 607880020027,
+    //         created_at: '2018-04-17T11:06:47-04:00',
+    //         updated_at: '2018-04-17T11:06:47-04:00'
+    //       }
+    //     ],
+    //     images: [
+    //       {
+    //         id: 2474661937211,
+    //         created_at: '2018-04-17T11:06:53-04:00',
+    //         position: 1,
+    //         updated_at: '2018-04-17T11:06:53-04:00',
+    //         product_id: 607880020027,
+    //         variant_ids: [],
+    //         src:
+    //           'https://cdn.shopify.com/s/files/1/0024/2882/9755/products/f7b623051b797b127e208fcb516e40794aeba422.png?v=1523977613',
+    //         width: 1711,
+    //         height: 1971
+    //       }
+    //     ],
+    //     options: [{ name: 'Title', position: 1, values: ['Default Title'] }]
+    //   },
+    //   {
+    //     id: 607878414395,
+    //     title: 'Relaxed Tee',
+    //     handle: 'relaxed-tee',
+    //     body_html: '',
+    //     published_at: '2018-04-17T11:03:06-04:00',
+    //     created_at: '2018-04-17T11:05:26-04:00',
+    //     updated_at: '2018-04-17T11:05:30-04:00',
+    //     vendor: 'highstandards999',
+    //     product_type: '',
+    //     tags: [],
+    //     variants: [
+    //       {
+    //         id: 7430609240123,
+    //         title: 'Default Title',
+    //         option1: 'Default Title',
+    //         option2: null,
+    //         option3: null,
+    //         sku: '666666',
+    //         requires_shipping: true,
+    //         taxable: true,
+    //         featured_image: null,
+    //         available: true,
+    //         price: '115.00',
+    //         grams: 345,
+    //         compare_at_price: null,
+    //         position: 1,
+    //         product_id: 607878414395,
+    //         created_at: '2018-04-17T11:05:26-04:00',
+    //         updated_at: '2018-04-17T11:05:26-04:00'
+    //       }
+    //     ],
+    //     images: [
+    //       {
+    //         id: 2474649419835,
+    //         created_at: '2018-04-17T11:05:30-04:00',
+    //         position: 1,
+    //         updated_at: '2018-04-17T11:05:30-04:00',
+    //         product_id: 607878414395,
+    //         variant_ids: [],
+    //         src:
+    //           'https://cdn.shopify.com/s/files/1/0024/2882/9755/products/aa86a5586c7860560f092f0d59f4eb4efd58c1c9.png?v=1523977530',
+    //         width: 1711,
+    //         height: 1971
+    //       }
+    //     ],
+    //     options: [{ name: 'Title', position: 1, values: ['Default Title'] }]
+    //   },
+    //   {
+    //     id: 607873400891,
+    //     title: 'Newton Bomber Liner',
+    //     handle: 'newton-bomber-liner',
+    //     body_html: '',
+    //     published_at: '2018-04-17T10:58:20-04:00',
+    //     created_at: '2018-04-17T11:02:23-04:00',
+    //     updated_at: '2018-04-17T11:02:26-04:00',
+    //     vendor: 'highstandards999',
+    //     product_type: '',
+    //     tags: [],
+    //     variants: [
+    //       {
+    //         id: 7430547243067,
+    //         title: 'Default Title',
+    //         option1: 'Default Title',
+    //         option2: null,
+    //         option3: null,
+    //         sku: '77777',
+    //         requires_shipping: true,
+    //         taxable: true,
+    //         featured_image: null,
+    //         available: true,
+    //         price: '198.00',
+    //         grams: 907,
+    //         compare_at_price: null,
+    //         position: 1,
+    //         product_id: 607873400891,
+    //         created_at: '2018-04-17T11:02:23-04:00',
+    //         updated_at: '2018-04-17T11:02:23-04:00'
+    //       }
+    //     ],
+    //     images: [
+    //       {
+    //         id: 2474613899323,
+    //         created_at: '2018-04-17T11:02:26-04:00',
+    //         position: 1,
+    //         updated_at: '2018-04-17T11:02:26-04:00',
+    //         product_id: 607873400891,
+    //         variant_ids: [],
+    //         src:
+    //           'https://cdn.shopify.com/s/files/1/0024/2882/9755/products/6339d25c3d31bc5ef28ef65a71022eb9f8e24dc8.png?v=1523977346',
+    //         width: 1711,
+    //         height: 1971
+    //       }
+    //     ],
+    //     options: [{ name: 'Title', position: 1, values: ['Default Title'] }]
+    //   }
+    // ]

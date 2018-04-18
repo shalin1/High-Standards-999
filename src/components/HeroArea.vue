@@ -25,7 +25,7 @@ export default {
 <style lang='scss' scoped>
 @import '../stylesheets/variables';
 .nav-offset {
-  height: 80px;
+  height: 60px;
   background-color: $pistachio;
 }
 .text-side {

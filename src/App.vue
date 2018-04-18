@@ -2,18 +2,21 @@
   <div id="app">
     <Header/>
     <HeroArea/>
+    <ProductCarousel/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import HeroArea from './components/HeroArea.vue'
+import ProductCarousel from './components/ProductCarousel.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    HeroArea
+    HeroArea,
+    ProductCarousel
   }
 }
 </script>
