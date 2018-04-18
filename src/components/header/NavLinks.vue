@@ -1,15 +1,26 @@
 <template>
-  <nav>
+  <div>
+
+    <mq-layout mq='sm'>
       <!-- <a href="#" v-on:click.prevent="showDropDown=!showDropDown"> -->
-        <Hamburger></Hamburger>
+      <Hamburger></Hamburger>
       <!-- </a> -->
       <ul v-if='showDropDown'>
         <li v-for='(url,title) in links' :key='url.id'>
           <a href='url'><h3>{{title}}</h3></a>
         </li>
       </ul>
+    </mq-layout>
 
-  </nav>
+    <mq-layout mq='lg'>
+      <ul>
+        <li v-for='(url,title) in links' :key='url.id'>
+          <a href='url'><h3>{{title}}</h3></a>
+        </li>
+      </ul>
+    </mq-layout>
+
+  </div>
 </template>
 
 <script>
@@ -38,19 +49,19 @@ export default {
 
 <style lang='scss' scoped>
 @import '../../stylesheets/variables';
-nav {
+div {
   position: relative;
 }
 a {
   position: relative;
+  color: $black;
 }
 ul{
-  position: absolute;
-left: -1px;
-overflow: hidden;
-background: $transparent-gray;
+  display: flex;
+  flex-direction: row;
 }
 li{
   display: block;
+  padding-left: 78px;
 }
 </style>

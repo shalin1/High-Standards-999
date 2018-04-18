@@ -14,6 +14,15 @@ import HeroArea from './components/HeroArea.vue'
 import ProductCarousel from './components/ProductCarousel.vue'
 import Collections from './components/Collections.vue'
 import Footer from './components/Footer.vue'
+import VueMq from 'vue-mq'
+import Vue from 'vue'
+
+Vue.use(VueMq, {
+  breakpoints: {
+    sm: 768,
+    lg: Infinity,
+  }
+})
 
 export default {
   name: 'App',
