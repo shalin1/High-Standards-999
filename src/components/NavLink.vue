@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'HeaderButton',
+  name: 'NavLink',
   props: {
     label: String
   }
@@ -14,9 +14,8 @@ export default {
 <style lang='scss' scoped>
 @import '../stylesheets/variables';
 button {
-  background-color: rgba(32, 47, 47, 0.1);
+  background-color: rgba(32, 47, 47, 0.0);
   color: $black;
-
   border-style: none;
 }
 </style>

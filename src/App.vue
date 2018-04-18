@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <HelloWorld msg="High Standards"/>
+    <Header/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Header from './components/Header.vue'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
+    Header
   }
-};
+}
 </script>
 
 <style lang='scss'>
-  @import 'stylesheets/Style';
-  @import 'stylesheets/variables';
+@import 'stylesheets/Style';
+@import 'stylesheets/variables';
 </style>
