@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import '../stylesheets/variables';
+@import '../../stylesheets/variables';
 .header-container {
   background-color: rgba(32, 47, 47, 0.1);
   color: $black;

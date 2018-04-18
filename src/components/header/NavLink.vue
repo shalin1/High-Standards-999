@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import '../stylesheets/variables';
+@import '../../stylesheets/variables';
 button {
   color: $black;
   border-style: none;

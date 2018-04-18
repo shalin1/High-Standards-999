@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Header from './components/header/Header.vue'
 import HeroArea from './components/HeroArea.vue'
 import ProductCarousel from './components/ProductCarousel.vue'
 

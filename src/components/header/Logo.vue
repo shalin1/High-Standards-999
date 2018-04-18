@@ -1,5 +1,5 @@
 <template>
-  <a href='/'><img src='../assets/logo.png' /></a>
+  <a href='/'><img src='../../assets/logo.png' /></a>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-  @import '../stylesheets/variables';
+@import '../../stylesheets/variables';
   img {
     color: $black;
     filter: invert(100%);

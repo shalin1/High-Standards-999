@@ -17,22 +17,22 @@ import Client from 'shopify-buy'
 const client = Client.buildClient({
   domain: 'highstandards999.myshopify.com',
   storefrontAccessToken: '4774ee906ad074c16eb30a467bc0349c'
-});
+})
 export default {
   name: 'productCarousel',
-  data() {
+  data () {
     return {
       items: [],
-      errors: [],
+      errors: []
     }
   },
   // Fetches posts when the component is created.
-  created() {
-    client.product.fetchAll().then((products) => {
-      products.forEach(product=>{
+  created () {
+    client.product.fetchAll().then(products => {
+      products.forEach(product => {
         this.items.push(product)
       })
-    });
+    })
   }
 }
 </script>

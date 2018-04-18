@@ -24,7 +24,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import '../stylesheets/variables';
 #cart{
   width: 19.7px;
 }
