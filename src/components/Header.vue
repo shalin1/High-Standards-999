@@ -26,11 +26,12 @@ export default {
 
 <style lang='scss' scoped>
 @import '../stylesheets/variables';
-nav {
+.header-container {
   background-color: rgba(32, 47, 47, 0.1);
   color: $black;
   border-style: none;
-  // position: absolute;
+  position: absolute;
+  width: 100vw;
   top:0;
   display: flex;
   justify-content: space-between;
