@@ -1,5 +1,5 @@
 <template>
-  <a>
+  <a href="this.destination">
     {{this.text}}
   </a>
 </template>

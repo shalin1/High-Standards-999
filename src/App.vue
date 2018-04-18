@@ -4,6 +4,7 @@
     <HeroArea/>
     <ProductCarousel/>
     <Collections />
+    <Footer />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from './components/header/Header.vue'
 import HeroArea from './components/HeroArea.vue'
 import ProductCarousel from './components/ProductCarousel.vue'
 import Collections from './components/Collections.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     Header,
     HeroArea,
     ProductCarousel,
-    Collections
+    Collections,
+    Footer
   }
 }
 </script>
