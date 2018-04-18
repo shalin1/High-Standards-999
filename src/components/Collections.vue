@@ -8,9 +8,10 @@
     </p>
   </section>
   <section class='collections-carousel'>
-    <li v-for="item of items" v-bind:key="item.id">
-      {{item.title}}
-    </li>
+    <div v-for="item of items" v-bind:key="item.id">
+      <img :src='item.image.src'  />
+      <button><h3>{{item.title}}</h3></button>
+    </div>
   </section>
   </div>
 </template>
