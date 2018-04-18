@@ -1,12 +1,15 @@
 <template>
-  <button>{{ label }}</button>
+  <a>
+    {{this.text}}
+  </a>
 </template>
 
 <script>
 export default {
   name: 'NavLink',
   props: {
-    label: String
+    text: String,
+    destination: String
   }
 }
 </script>

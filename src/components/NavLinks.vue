@@ -1,15 +1,13 @@
 <template>
   <nav>
-    <a href="#" v-on:click.prevent="showDropDown=!showDropDown"/>
-      <Hamburger/>
+    <a href="#" v-on:click.prevent="showDropDown=!showDropDown">
+      <Hamburger></Hamburger>
     </a>
-    <div>
+    <!-- <div>
       <ul>
-        <NavLink v-for="link in links" class="list">{{name}}</NavLink>
+        <NavLink v-for="link in links" class="list" v-bind:key="link.id">{{link.name}}</NavLink>
       </ul>
-    </div>
-    <!-- todo: implement nav links on dropdown -->
-    <!-- -->
+    </div> -->
   </nav>
 </template>
 
@@ -23,20 +21,19 @@ export default {
     NavLink,
     Hamburger
   },
-  data: {
-    showDropDown: true,
-    links: [
-      {name: "Men"},
-      {name: "Women"},
-      {name: "Magazine"},
-      {name: "Stores"},
-    ]
-  },
+  data: function () {
+    return {
+      showDropDown: false,
+      links: [
+        { name: 'Men' },
+        { name: 'Women' },
+        { name: 'Magazine' },
+        { name: 'Stores' }
+      ]
+    }
+  }
 }
-
-
 </script>
 
 <style lang='scss' scoped>
-
 </style>
