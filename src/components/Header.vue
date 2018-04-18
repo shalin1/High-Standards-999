@@ -30,6 +30,8 @@ nav {
   background-color: rgba(32, 47, 47, 0.1);
   color: $black;
   border-style: none;
+  // position: absolute;
+  top:0;
   display: flex;
   justify-content: space-between;
   align-items: center;
