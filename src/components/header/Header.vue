@@ -47,6 +47,7 @@ export default {
   color: $black;
   // border-bottom: 1px solid $gray;
   // weird, this is in spec but wildly different than render. hmmm.
+  z-index: 10;
   position: absolute;
   width: 100vw;
   top: 0;

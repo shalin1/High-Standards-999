@@ -1,32 +1,43 @@
 <template>
   <div>
-    <img src='../assets/carousel-hero.jpg' />
-    <button>Start Shopping</button>
+    <img :class='$mq' src='../assets/carousel-hero.jpg' />
+    <button :class='$mq'>Start Shopping</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Carousel',
+  name: 'Carousel'
 }
 </script>
 
 <style lang='scss' scoped>
 @import '../stylesheets/variables';
+
 div {
-  position: relative
+  position: relative;
+  z-index: 1;
 }
-img{
-width:100%;
+
+img {
+  object-fit: cover;
+  &.lg {
+    width: 57.3vw;
+    height: 680px;
+  }
 }
-button{
+
+button {
   background: $black;
   color: $white;
   position: absolute;
-  bottom:0;
-  right:0;
+  bottom: 0;
+  right: 0;
   border-style: none;
   height: 60px;
   width: 50vw;
+  &.lg{
+    width: 25vw;
+  }
 }
 </style>

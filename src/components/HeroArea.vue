@@ -1,9 +1,9 @@
 <template>
     <section>
-      <div class='nav-offset' :class="$mq"></div>
       <div class='hero-area' :class="$mq">
         <article class='text-side' :class='$mq'>
-          <h1 :class='$mq'>High Standards</h1>
+          <div class='nav-offset' :class="$mq"></div>
+          <h1 class='headline' :class='$mq'>High Standards</h1>
           <h3 :class='$mq'>Low Maintance</h3>
           <p :class='$mq'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -30,7 +30,7 @@ export default {
 section {
   background-color: $pistachio;
   height: 587px;
-  &.lg{
+  &.lg {
     height: 680px;
   }
 }
@@ -43,38 +43,44 @@ section {
 }
 
 .hero-area {
-  display:flex;
+  display: flex;
   flex-direction: column;
   &.lg {
+    height: 680px;
     flex-direction: row;
   }
 }
 
 .text-side {
   background-color: $pistachio;
-  padding: 25px;
+  padding: 0 25px;
   color: $black;
-  &.lg{
+  &.lg {
     padding-top: 113px;
-    padding-left: 142px;
+    padding-left: 10vw;
   }
 }
-h1 {
+
+.headline {
   color: $white;
   padding-bottom: 20px;
-  &.lg{
+
+  &.lg {
+    font-size: calc(48px + 1vw);
     padding-bottom: 40px;
   }
 }
+
 h3 {
   padding-bottom: 6px;
-  &.lg{
+  &.lg {
     padding-bottom: 12px;
   }
 }
+
 p {
-  &.lg{
-  padding-right: 142px;
-}
+  &.lg {
+    padding-right: 10vw;
+  }
 }
 </style>
