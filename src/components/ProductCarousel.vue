@@ -1,18 +1,17 @@
 <template>
   <div>
-
-  <section class='product-carousel-header'>
-    <h2>Shop New Arrivals</h2>
-  </section>
-  <section class='product-carousel' :class='$mq'>
-    <div class='product-carousel-item' :class='$mq' v-for="item of items" v-bind:key="item.id">
-      <img :src='item.images[0].src' />
-      <div class='item-info'>
-        <h3>{{item.title}}</h3>
-        <p>${{item.variants[0].price}}</p>
+    <section class='product-carousel-header'>
+      <h2>Shop New Arrivals</h2>
+    </section>
+    <section class='product-carousel' :class='$mq'>
+      <div class='product-carousel-item' :class='$mq' v-for="item of items" v-bind:key="item.id">
+        <img :src='item.images[0].src' />
+        <div class='item-info'>
+          <h3>{{item.title}}</h3>
+          <p>${{item.variants[0].price}}</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   </div>
 </template>
 
@@ -42,6 +41,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+
 @import '../stylesheets/variables';
 h2 {
   padding: 30px 20px;

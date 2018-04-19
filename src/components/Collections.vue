@@ -23,14 +23,14 @@ const client = Client.buildClient({
 })
 export default {
   name: 'productCarousel',
-  data() {
+  data () {
     return {
       items: [],
       errors: []
     }
   },
   // Fetches posts when the component is created.
-  created() {
+  created () {
     client.collection.fetchAll().then(collections => {
       collections.forEach(collection => {
         this.items.push(collection)

@@ -1,5 +1,5 @@
 <template>
-    <section>
+
       <div class='hero-area' :class="$mq">
         <article class='text-side' :class='$mq'>
           <div class='nav-offset' :class="$mq"></div>
@@ -11,7 +11,7 @@
         </article>
         <Carousel/>
       </div>
-    </section>
+
 </template>
 
 <script>
@@ -64,9 +64,7 @@ section {
 .headline {
   color: $white;
   padding-bottom: 20px;
-
   &.lg {
-    font-size: calc(48px + 1vw);
     padding-bottom: 40px;
   }
 }

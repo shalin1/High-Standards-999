@@ -14,15 +14,19 @@ import HeroArea from './components/HeroArea.vue'
 import ProductCarousel from './components/ProductCarousel.vue'
 import Collections from './components/Collections.vue'
 import Footer from './components/Footer.vue'
-import VueMq from 'vue-mq'
 import Vue from 'vue'
+import VueMq from 'vue-mq'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 Vue.use(VueMq, {
   breakpoints: {
     sm: 768,
-    lg: Infinity,
+    lg: Infinity
   }
 })
+Vue.use(VueAwesomeSwiper,
+ /* { default global options } */
+)
 
 export default {
   name: 'App',
