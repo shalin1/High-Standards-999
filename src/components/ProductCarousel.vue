@@ -4,8 +4,8 @@
   <section class='product-carousel-header'>
     <h2>Shop New Arrivals</h2>
   </section>
-  <section class='product-carousel'>
-    <div class='product-carousel-item' v-for="item of items" v-bind:key="item.id">
+  <section class='product-carousel' :class='$mq'>
+    <div class='product-carousel-item' :class='$mq' v-for="item of items" v-bind:key="item.id">
       <img :src='item.images[0].src' />
       <div class='item-info'>
         <h3>{{item.title}}</h3>
@@ -51,12 +51,19 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  &.lg{
+    flex-wrap:nowrap;
+    max-width: 100vw;
+  }
 }
 .product-carousel-item {
   display: flex;
   flex-direction: column;
-  flex: 1 0 50vw;
   border: 1px solid $gray;
+  flex: 1 0 50vw;
+  &.lg{
+    flex: 1 0 25vw;
+  }
 }
 .item-info{
   padding: 12px;

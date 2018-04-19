@@ -3,7 +3,7 @@
 
 h1 {
   font-family: 'Crimson Text', serif;
-  font-size: 48px;
+  font-size: calc(48px + 1.0vw);
   letter-spacing: 0;
   line-height: 48px;
 }
