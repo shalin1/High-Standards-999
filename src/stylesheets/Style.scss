@@ -6,6 +6,8 @@ h1 {
   font-size: calc(48px + 1vw);
   letter-spacing: 0;
   line-height: 48px;
+  color: $white;
+  white-space: nowrap;
 }
 
 h2 {
@@ -13,6 +15,8 @@ h2 {
   font-size: calc(18px + 0.5vw);
   letter-spacing: 0;
   line-height: 24px;
+  white-space: nowrap;
+  color: $black;
 }
 
 h3, button {
@@ -22,6 +26,8 @@ h3, button {
   text-transform: uppercase;
   letter-spacing: 0;
   line-height: 24px;
+  white-space: nowrap;
+  color: $black;
 }
 
 p {
@@ -30,4 +36,5 @@ p {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 24px;
+  color: $black;
 }

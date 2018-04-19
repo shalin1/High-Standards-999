@@ -16,17 +16,15 @@ import Collections from './components/Collections.vue'
 import Footer from './components/Footer.vue'
 import Vue from 'vue'
 import VueMq from 'vue-mq'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueCarousel from 'vue-carousel';
 
+Vue.use(VueCarousel);
 Vue.use(VueMq, {
   breakpoints: {
-    sm: 768,
+    sm: 900,
     lg: Infinity
   }
 })
-Vue.use(VueAwesomeSwiper,
- /* { default global options } */
-)
 
 export default {
   name: 'App',

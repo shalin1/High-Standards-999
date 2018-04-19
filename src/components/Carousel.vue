@@ -21,6 +21,7 @@ div {
 
 img {
   object-fit: cover;
+  width: 100vw;
   &.lg {
     width: 57.3vw;
     height: 680px;

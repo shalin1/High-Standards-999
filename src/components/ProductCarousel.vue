@@ -1,12 +1,12 @@
 <template>
   <div>
     <section class='product-carousel-header'>
-      <h2>Shop New Arrivals</h2>
+      <h2 :class="$mq">Shop New Arrivals</h2>
     </section>
     <section class='product-carousel' :class='$mq'>
       <div class='product-carousel-item' :class='$mq' v-for="item of items" v-bind:key="item.id">
         <img :src='item.images[0].src' />
-        <div class='item-info'>
+        <div class='item-info' :class="$mq">
           <h3>{{item.title}}</h3>
           <p>${{item.variants[0].price}}</p>
         </div>
@@ -44,7 +44,10 @@ export default {
 
 @import '../stylesheets/variables';
 h2 {
-  padding: 30px 20px;
+  padding: 24px 30px;
+  &.lg{
+    padding: 24px 10vw;
+  }
 }
 .product-carousel{
   background-color: $light-gray;
@@ -60,18 +63,23 @@ h2 {
   display: flex;
   flex-direction: column;
   border: 1px solid $gray;
-  flex: 1 0 50vw;
+  width: calc(100% * (1/2));
   &.lg{
-    flex: 1 0 25vw;
+    width: calc(100% * (1/4));
   }
 }
 .item-info{
-  padding: 12px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-wrap: wrap;
+  padding: 0 12px 12px 12px;
+  &.lg{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 24px 12px 24px;
+  }
 }
 img {
   width: 100%;

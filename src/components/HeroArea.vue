@@ -1,17 +1,15 @@
 <template>
-
-      <div class='hero-area' :class="$mq">
-        <article class='text-side' :class='$mq'>
-          <div class='nav-offset' :class="$mq"></div>
-          <h1 class='headline' :class='$mq'>High Standards</h1>
-          <h3 :class='$mq'>Low Maintance</h3>
-          <p :class='$mq'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </article>
-        <Carousel/>
-      </div>
-
+  <section class='hero-area' :class="$mq">
+    <article class='text-side' :class='$mq'>
+      <div class='nav-offset' :class="$mq"></div>
+      <h1 class='headline' :class='$mq'>High Standards</h1>
+      <h3 :class='$mq'>Low Maintance</h3>
+      <p :class='$mq'>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </article>
+    <Carousel/>
+  </section>
 </template>
 
 <script>
@@ -53,7 +51,7 @@ section {
 
 .text-side {
   background-color: $pistachio;
-  padding: 0 25px;
+  padding: 21px 24px 21px 24px;
   color: $black;
   &.lg {
     padding-top: 113px;
@@ -63,7 +61,8 @@ section {
 
 .headline {
   color: $white;
-  padding-bottom: 20px;
+  padding-bottom: 27px;
+
   &.lg {
     padding-bottom: 40px;
   }
