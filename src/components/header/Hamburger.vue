@@ -1,5 +1,5 @@
 <template>
-  <svg width="22px" height="14px" viewBox="0 0 22 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg class='burger'width="22px" height="14px" viewBox="0 0 22 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
       <desc>Created with Sketch.</desc>
       <defs></defs>
@@ -22,4 +22,7 @@ export default {
 }
 </script>
 <style>
+.burger {
+  padding-right: 2vw;
+}
 </style>

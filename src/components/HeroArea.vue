@@ -15,7 +15,7 @@
         <swiper-slide :style='$mq'></swiper-slide>
         <swiper-slide :style='$mq'></swiper-slide>
       </swiper>
-      <div class='hero-label' :class='$mq'><h3 :class='$mq'>Start Shopping</h3></div>
+      <a href='#'><div class='hero-label' :class='$mq'><h3 :class='$mq'>Start Shopping</h3></div></a>
   </section>
 </template>
 
@@ -34,9 +34,11 @@ export default {
       swiperOption: {
         slidesPerView: 1,
         autoplay: {
-          delay: 2500,
+          delay: 5000,
+
           disableOnInteraction: false
         },
+        speed: 800,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
@@ -83,6 +85,7 @@ export default {
   align-items: center;
   justify-content: center;
   z-index:100;
+
   &.lg{
     width: 25vw;
     height: 84px;
@@ -90,6 +93,11 @@ export default {
   & h3 {
     padding-bottom: 38px;
     color: $white;
+    transition:1s;
+      &:hover{
+        color:$pistachio;
+        transition: 1s;
+    }
     &.lg{
       padding: 0;
     }
@@ -127,11 +135,9 @@ export default {
   }
 }
 
-h1 {
-  // padding-right: 97px;
-}
 h3 {
   padding-bottom: 6px;
+
   &.lg {
     padding-bottom: 12px;
   }

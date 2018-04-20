@@ -9,16 +9,15 @@
             <Hamburger v-else/>
           </transition>
         </a>
-
-        <transition name='fade' mode='out-in'>
+      <transition name='fade' mode='out-in'>
           <div v-if='showMobileLinks' class='mobile-links'>
             <a  v-for='(url,title) in links' :key='url.id' href='url'><h3 class='mobile-link'>{{title}}</h3></a>
           </div>
           <a v-else href='/'><img class='logo' src='../../assets/logo.png' /></a>
         </transition>
-        <Cart />
-
-
+        <transition name='fade' mode='out-in'>
+          <Cart />
+        </transition>
       </nav>
     </mq-layout>
 
@@ -101,6 +100,7 @@ nav {
 }
 .x{
   color:$white;
+  padding-right: 2vw;
 }
 .logo {
   color: $black;
@@ -117,11 +117,10 @@ nav {
 li {
   display: block;
   padding: 30px 39px;
-  transition: 2s;
+  transition: 5s;
   &:hover{
     transition: .5s;
     background-color: $pistachio;
-
   }
 }
 ul {
@@ -140,7 +139,7 @@ ul {
   justify-content: center;
 }
 .mobile-link{
-  padding: 0 4vw;
+  padding: 0 5vw;
   color: $white;
 }
 .fade-enter-active {
@@ -152,6 +151,5 @@ ul {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-
 
 </style>

@@ -31,10 +31,11 @@
     </section>
       <swiper class='collections-carousel' :class='$mq' :options='swiperOption' ref='categoriesCarousel'>
         <swiper-slide :class='$mq' v-for='item of items' v-bind:key='item.id'>
-          <img v-if='item.title!==","' :src='item.image.src' />
+          <a href="#"><img :src='item.image.src' />
           <div class='category-label'>
             <h3 v-if='item.title!==","'>{{item.title}}</h3>
           </div>
+          </a>
         </swiper-slide>
       </swiper>
   </div>
@@ -130,6 +131,7 @@ img {
 .swiper-slide {
   width: 239px;
   height: 348px;
+  overflow: hidden;
   &.lg{
     width: 330px;
     height: 480px;
@@ -156,6 +158,16 @@ img {
   padding-left: 24px;
   display: flex;
   align-items: center;
+}
+
+img {
+  width: 100%;
+  transition: .8s ;
+
+  &:hover{
+    transform: scale(1.03);
+    transition: .6s ;
+  }
 }
 
 h3 {

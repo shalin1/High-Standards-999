@@ -5,11 +5,12 @@
     </section>
     <section class='product-carousel' :class='$mq'>
       <div class='product-carousel-item' :class='$mq' v-for="item of items" v-bind:key="item.id">
-        <img :src='item.images[0].src' />
+        <a href="#"><img :src='item.images[0].src' />
         <div class='item-info' :class="$mq">
           <h3>{{item.title}}</h3>
           <p>${{item.variants[0].price}}</p>
         </div>
+        </a>
       </div>
     </section>
   </div>
@@ -63,9 +64,10 @@ h2 {
   display: flex;
   flex-direction: column;
   border: 1px solid $gray;
-  width: calc(100% * (1/2));
+  width: 50%;
+  overflow: hidden;
   &.lg{
-    width: calc(100% * (1/4));
+    width: 25%;
   }
 }
 .item-info{
@@ -74,6 +76,7 @@ h2 {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0 12px 12px 12px;
+  z-index: 10;
   &.lg{
     flex-direction: row;
     justify-content: space-between;
@@ -83,5 +86,12 @@ h2 {
 }
 img {
   width: 100%;
+  z-index: 1;
+  transition: .8s ;
+
+  &:hover{
+    transform: scale(1.05);
+    transition: .6s ;
+  }
 }
 </style>

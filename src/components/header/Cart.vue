@@ -1,4 +1,5 @@
 <template>
+<div class='cart-container'>
   <svg :class='$mq' id='cart' width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
       <defs></defs>
@@ -12,6 +13,8 @@
           </g>
       </g>
   </svg>
+  </div>
+
 </template>
 
 <script>
@@ -23,10 +26,15 @@ export default {
 <style lang='scss' scoped>
 #cart{
   width: 19.7px;
-  padding-right: 15px;
+  padding: 8px;
   &.lg{
-    padding-right: 40px;
+    padding: 20px;
   }
 }
-
+.cart-container{
+  padding: 13px 10px;
+  &:hover{
+    fill:#B6CBB8;
+  }
+}
 </style>
