@@ -16,7 +16,7 @@
           </g>
         </g>
       </svg>
-      <svg class='arrow' v-on:click='swiper.slideNext(500, false)' width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg class='arrow' v-on:click='swiper.slideTo(swiper.activeIndex < 2 ? swiper.activeIndex+1 :swiper.activeIndex,500, false)' width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="desktop_home" transform="translate(-185.000000, -1742.000000)" fill="#202F2F">
           <g id="Collections" transform="translate(1.000000, 1244.000000)">
             <g id="Arrows" transform="translate(142.000000, 492.000000)">
@@ -31,9 +31,9 @@
     </section>
       <swiper class='collections-carousel' :class='$mq' :options='swiperOption' ref='categoriesCarousel'>
         <swiper-slide :class='$mq' v-for='item of items' v-bind:key='item.id'>
-          <img :src='item.image.src' />
+          <img v-if='item.title!==","' :src='item.image.src' />
           <div class='category-label'>
-            <h3>{{item.title}}</h3>
+            <h3 v-if='item.title!==","'>{{item.title}}</h3>
           </div>
         </swiper-slide>
       </swiper>
@@ -58,6 +58,11 @@ export default {
   components: {
     swiper,
     swiperSlide
+  },
+  on: {
+    slideNextTransitionEnd: function () {
+      console.log(mySwiper.getTranslate())
+    }
   },
   data () {
     return {
@@ -141,7 +146,7 @@ img {
   }
 
   &-active div {
-    transition: background-color 0.5s;
+    transition: background-color .5s;
     background-color: $transparent-black;
   }
 }
@@ -154,7 +159,8 @@ img {
   width: 100%;
   height: 60px;
   color: white;
-  background-color: $transparent-black;
+  transition: background-color .5s;
+  background-color: $transparent;
   position: absolute;
   bottom: 0;
   padding-left: 24px;

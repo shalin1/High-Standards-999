@@ -1,8 +1,7 @@
 <template>
   <nav class='footer-container' :class="$mq">
-    <div v-for="(url,title) in links" :key='url.id'>
-      <a :href='url'><h3 :class="$mq">{{title}}</h3></a>
-    </div>
+      <a v-for="(url,title) in links" :key='url.id' :href='url'><h3 :class="$mq">{{title}}</h3></a>
+
   </nav>
 </template>
 
@@ -32,12 +31,9 @@ export default {
   display: flex;
   align-items: flex-start;
   height: 120px;
-  &.sm{
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
-
-  }
   &.lg{
     align-items: center;
     height: 84px;
@@ -51,7 +47,7 @@ h3{
   padding-top: 24px;
   padding-left: 24px;
   &.lg{
-    padding-right: 78px;
+    padding: 30px 78px 30px 0;
   }
 }
 
