@@ -28,7 +28,5 @@ export default {
     padding-right: 40px;
   }
 }
-.inverted {
-  fill: #FFFFFF;
-}
+
 </style>

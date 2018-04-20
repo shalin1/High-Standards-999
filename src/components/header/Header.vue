@@ -10,7 +10,7 @@
           </transition>
         </a>
 
-        <transition name='logo-link-slide' mode='out-in'>
+        <transition name='fade' mode='out-in'>
           <div v-if='showMobileLinks' class='mobile-links'>
             <a  v-for='(url,title) in links' :key='url.id' href='url'><h3 class='mobile-link'>{{title}}</h3></a>
           </div>
@@ -27,9 +27,9 @@
         <div>
           <a href='/'><img class='logo' src='../../assets/logo.png' /></a>
           <ul>
-            <li v-for='(url,title) in links' :key='url.id'>
-              <a href='url'><h3>{{title}}</h3></a>
-            </li>
+            <a v-for='(url,title) in links' :key='url.id'  :href='url'>
+              <li><h3>{{title}}</h3></li>
+            </a>
           </ul>
         </div>
         <Cart />
@@ -40,7 +40,6 @@
 </template>
 
 <script>
-import NavLinks from './NavLinks.vue'
 import Cart from './Cart.vue'
 import Hamburger from './Hamburger.vue'
 
@@ -50,7 +49,6 @@ export default {
     label: String
   },
   components: {
-    NavLinks,
     Cart,
     Hamburger
   },
@@ -106,17 +104,29 @@ nav {
 }
 .logo {
   color: $black;
+  transition: 1s;
   filter: invert(100%);
   height: 36px;
   width: 36px;
+  &:hover{
+    transition: 1s;
+    filter: invert(75%)
+  }
 }
 li {
   display: block;
-  padding-left: 78px;
+  padding: 30px 39px;
+  transition: 2s;
+  &:hover{
+    transition: .5s;
+    background-color: $pistachio;
+
+  }
 }
 ul {
   display: flex;
   flex-direction: row;
+  padding-left: 39px
 }
 
 .nav-link-container {
@@ -139,15 +149,6 @@ ul {
   transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-.logo-link-slide-enter-active {
-  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.logo-link-slide-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.logo-link-slide-enter, .logo-link-slide-leave-to {
   opacity: 0;
 }
 

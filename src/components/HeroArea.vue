@@ -112,7 +112,9 @@ p {
     padding-right: 10vw;
   }
 }
-
+div {
+  width: 100vw;
+}
 @media only screen and (max-width: 900px) {
   div {
     width: 100vw;
