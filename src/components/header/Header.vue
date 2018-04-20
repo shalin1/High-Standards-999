@@ -1,24 +1,29 @@
 <template>
-  <div class='header-container'>
+  <div>
 
     <mq-layout mq="sm">
-      <nav class='sm'>
-        <a href="#" v-on:click.prevent="showDropDown=!showDropDown">
-          <Hamburger v-if="!showDropDown" />
-          <span v-else>X</span>
-          <transition name='slide-fade'>
-            <div v-if='showDropDown' class='mobile-links'>
-            <a class='mobile-link'  v-for='(url,title) in links' :key='url.id' href='url'><h3>{{title}}</h3></a>
-          </div>
+      <nav class='header-container' :class='{ inverted : showMobileLinks}'>
+        <a href="#" v-on:click.prevent="showMobileLinks=!showMobileLinks">
+          <transition name='fade' mode='out-in'>
+            <h2 class='x' v-if="showMobileLinks">✕</h2>
+            <Hamburger v-else/>
           </transition>
         </a>
-        <a v-if='!showDropDown' href='/'><img class='logo' src='../../assets/logo.png' /></a>
+
+        <transition name='logo-link-slide' mode='out-in'>
+          <div v-if='showMobileLinks' class='mobile-links'>
+            <a  v-for='(url,title) in links' :key='url.id' href='url'><h3 class='mobile-link'>{{title}}</h3></a>
+          </div>
+          <a v-else href='/'><img class='logo' src='../../assets/logo.png' /></a>
+        </transition>
         <Cart />
+
+
       </nav>
     </mq-layout>
 
     <mq-layout mq="lg">
-      <nav class='lg'>
+      <nav class='header-container lg'>
         <div>
           <a href='/'><img class='logo' src='../../assets/logo.png' /></a>
           <ul>
@@ -51,7 +56,7 @@ export default {
   },
   data() {
     return {
-      showDropDown: false,
+      showMobileLinks: false,
       links: {
         Men: '#',
         Women: '#',
@@ -66,12 +71,18 @@ export default {
 <style lang='scss' scoped>
 @import '../../stylesheets/variables';
 .header-container {
+  transition: 0.8s;
   background-color: $transparent-gray;
   color: $black;
   z-index: 10;
   position: absolute;
   width: 100vw;
   top: 0;
+  &.inverted{
+    transition: 0.8s;
+    background-color: $black;
+    fill: $white;
+  }
 }
 nav {
   display: flex;
@@ -89,6 +100,9 @@ nav {
     justify-content: space-between;
     align-items: center;
   }
+}
+.x{
+  color:$white;
 }
 .logo {
   color: $black;
@@ -109,24 +123,33 @@ ul {
   position: relative;
 }
 .mobile-links {
-  position: absolute;
-
   display: flex;
   flex-direction: row;
-  // background: $white;
+  align-items: center;
+  justify-content: center;
 }
 .mobile-link{
-  padding-right: 10vw;
+  padding: 0 4vw;
+  color: $white;
 }
-.slide-fade-enter-active {
-  transition: all .6s ease;
+.fade-enter-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+.fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-enter, .slide-fade-leave-to {
-  transform: translateX(-80px);
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
+.logo-link-slide-enter-active {
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.logo-link-slide-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.logo-link-slide-enter, .logo-link-slide-leave-to {
+  opacity: 0;
+}
+
 
 </style>

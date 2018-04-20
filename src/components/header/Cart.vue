@@ -17,9 +17,6 @@
 <script>
 export default {
   name: 'Cart',
-  props: {
-    type: String,
-  }
 }
 </script>
 
@@ -30,5 +27,8 @@ export default {
   &.lg{
     padding-right: 40px;
   }
+}
+.inverted {
+  fill: #FFFFFF;
 }
 </style>
