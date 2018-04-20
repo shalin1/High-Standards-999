@@ -1,28 +1,21 @@
 <template>
   <section class='hero-area' :class="$mq">
     <article class='text-side' :class='$mq'>
-      <div class='nav-offset' :class="$mq"></div>
+      <section class='nav-offset' :class="$mq"></section>
       <h1 class='headline' :class='$mq'>High Standards</h1>
       <h3 :class='$mq'>Low Maintance</h3>
       <p :class='$mq'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
-      <div class="swiper-pagination" slot="pagination"></div>
+      <section class="swiper-pagination" slot="pagination"></section>
     </article>
-    <swiper :options='swiperOption' ref='heroCarousel'>
-      <swiper-slide>    <img :class='$mq' src='../assets/carousel-hero.jpg' />
-          <button :class='$mq'>Start Shopping</button>
-      </swiper-slide>
-      <swiper-slide>    <img :class='$mq' src='../assets/carousel-hero.jpg' />
-          <button :class='$mq'>Start Shopping</button>
-      </swiper-slide>
-      <swiper-slide>    <img :class='$mq' src='../assets/carousel-hero.jpg' />
-          <button :class='$mq'>Start Shopping</button>
-      </swiper-slide>
-      <swiper-slide>    <img :class='$mq' src='../assets/carousel-hero.jpg' />
-          <button :class='$mq'>Start Shopping</button>
-      </swiper-slide>
-  </swiper>
+      <swiper  :options='swiperOption' ref='heroCarousel'>
+        <swiper-slide :style='$mq'></swiper-slide>
+        <swiper-slide :style='$mq'></swiper-slide>
+        <swiper-slide :style='$mq'></swiper-slide>
+        <swiper-slide :style='$mq'></swiper-slide>
+        <button :class='$mq'>Start Shopping</button>
+      </swiper>
   </section>
 </template>
 
@@ -39,6 +32,7 @@ export default {
   data() {
     return {
       swiperOption: {
+        slidesPerView: 1,
         autoplay: {
           delay: 2500,
           disableOnInteraction: false
@@ -59,14 +53,6 @@ export default {
 <style lang='scss' scoped>
 @import '../stylesheets/variables';
 
-section {
-  background-color: $pistachio;
-  height: 587px;
-  &.lg {
-    height: 680px;
-  }
-}
-
 .nav-offset {
   height: 60px;
   &.lg {
@@ -74,7 +60,9 @@ section {
   }
 }
 
+
 .hero-area {
+  background-color: $pistachio;
   display: flex;
   flex-direction: column;
   &.lg {
@@ -85,30 +73,33 @@ section {
 
 .text-side {
   background-color: $pistachio;
-  padding: 21px 24px 21px 24px;
+  padding: 21px 24px 20px 24px;
   color: $black;
   &.lg {
-    padding: 113px 10vw 0 10vw;
+    padding: 113px 0vw 0 10vw;
   }
 }
 
-img {
-  object-fit: cover;
-  object-position: 0 0;
-  position: relative;
-  display: flex;
-  align-items: center;
+.swiper-slide {
+  background-image: url('../assets/carousel-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  &.lg {
+    width: 100vw;
+  }
 }
 
 .headline {
   color: $white;
   padding-bottom: 27px;
-
   &.lg {
     padding-bottom: 40px;
   }
 }
 
+h1 {
+  padding-right: 97px;
+}
 h3 {
   padding-bottom: 6px;
   &.lg {
@@ -121,14 +112,24 @@ p {
     padding-right: 10vw;
   }
 }
+
+@media only screen and (max-width: 900px) {
+  div {
+    width: 100vw;
+    height: 294px;
+    padding-top: 40px;
+    background-size: cover;
+  }
+}
+
 </style>
 
 <style>
 .swiper-pagination-bullet {
   margin: 24px 24px 24px 0;
   border-radius: 0;
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   color: #000;
   opacity: 1;
   background: #dddddd;

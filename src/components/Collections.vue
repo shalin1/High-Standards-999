@@ -37,9 +37,6 @@
           </div>
         </swiper-slide>
       </swiper>
-      <!-- </swiper><div v-for="item of items" v-bind:key="item.id">
-        <img :src='item.image.src'  />
-        <button><h3>{{item.title}}</h3></button> -->
   </div>
 </template>
 
