@@ -36,7 +36,7 @@ export default {
     swiper,
     swiperSlide
   },
-  data () {
+  data() {
     return {
       swiperOption: {
         autoplay: {
@@ -45,11 +45,11 @@ export default {
         },
         pagination: {
           el: '.swiper-pagination',
-    			clickable: true,
-          renderBullet: function (index, className) {
-            return '<div class="' + className + '"></div>';
+          clickable: true,
+          renderBullet: function(index, className) {
+            return '<div class="' + className + '"></div>'
           }
-        },
+        }
       }
     }
   }
@@ -126,15 +126,15 @@ p {
 <style>
 .swiper-pagination-bullet {
   margin: 24px 24px 24px 0;
-	border-radius: 0;
-	width: 5px;
-	height: 5px;
-	color:#000;
-	opacity: 1;
-	background: #DDDDDD;
+  border-radius: 0;
+  width: 5px;
+  height: 5px;
+  color: #000;
+  opacity: 1;
+  background: #dddddd;
 }
 .swiper-pagination-bullet-active {
-	color:#fff;
-	background: #202F2F;
+  color: #fff;
+  background: #202f2f;
 }
 </style>
