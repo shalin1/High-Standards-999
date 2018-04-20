@@ -108,6 +108,7 @@ nav {
   filter: invert(100%);
   height: 36px;
   width: 36px;
+  margin-left: 10px;
   &:hover{
     transition: 1s;
     filter: invert(75%)
