@@ -21,7 +21,7 @@
 
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
+import '../stylesheets/swiper.css'
 
 export default {
   name: 'HeroArea',
@@ -158,7 +158,6 @@ div {
   }
 }
 </style>
-
 <style>
 .swiper-pagination-bullet {
   margin: 24px 24px 24px 0;
