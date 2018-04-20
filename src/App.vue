@@ -16,9 +16,7 @@ import Collections from './components/Collections.vue'
 import Footer from './components/Footer.vue'
 import Vue from 'vue'
 import VueMq from 'vue-mq'
-import VueCarousel from 'vue-carousel';
 
-Vue.use(VueCarousel);
 Vue.use(VueMq, {
   breakpoints: {
     sm: 900,
