@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <section class='collections-header' :class='$mq'>
+  <div class='collections-container' :class='$mq'>
+    <section class='collections-text' :class='$mq'>
       <h2>Collections</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -21,8 +21,15 @@ const client = Client.buildClient({
   domain: 'highstandards999.myshopify.com',
   storefrontAccessToken: '4774ee906ad074c16eb30a467bc0349c'
 })
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
 export default {
   name: 'productCarousel',
+  components: {
+    swiper,
+    swiperSlide
+  },
   data () {
     return {
       items: [],
@@ -42,8 +49,20 @@ export default {
 
 <style lang='scss' scoped>
 @import '../stylesheets/variables';
-.collections-header {
+
+.collections-container {
+  display: flex;
+  flex-direction: column;
+  &.lg{
+    flex-direction: row;
+  }
+}
+.collections-text {
   padding: 30px 24px 24px 24px;
+  &.lg{
+    padding: 276px 0vw 276px 10vw;
+    width: 45vw;
+  }
 }
 h2 {
   padding-bottom: 12px;
@@ -51,7 +70,9 @@ h2 {
 .collections-carousel{
   padding-left: 24px;
   width: 100vw;
-  display: flex;
-  flex-direction: row;
+  &.lg{
+    width: 60vw;
+    padding: 84px;
+  }
 }
 </style>
