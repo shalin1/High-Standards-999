@@ -45,7 +45,7 @@
 
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import '../stylesheets/swiper.css'
+import 'swiper/dist/css/swiper.css'
 import Client from 'shopify-buy'
 const client = Client.buildClient({
   domain: 'highstandards999.myshopify.com',
