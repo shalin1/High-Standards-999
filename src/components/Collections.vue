@@ -5,7 +5,7 @@
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </p>
-      <svg v-on:click='swiper.slideTo(swiper.activeIndex-1, 500, false)' width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg class='arrow' v-on:click='swiper.slidePrev(500, false)' width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="desktop_home" transform="translate(-149.000000, -1742.000000)" fill="#202F2F">
           <g id="Collections" transform="translate(1.000000, 1244.000000)">
             <g id="Arrows" transform="translate(142.000000, 492.000000)">
@@ -16,7 +16,7 @@
           </g>
         </g>
       </svg>
-      <svg v-on:click='swiper.slideTo(swiper.activeIndex+1, 500, false)' width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg class='arrow' v-on:click='swiper.slideNext(500, false)' width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="desktop_home" transform="translate(-185.000000, -1742.000000)" fill="#202F2F">
           <g id="Collections" transform="translate(1.000000, 1244.000000)">
             <g id="Arrows" transform="translate(142.000000, 492.000000)">
@@ -30,7 +30,12 @@
 
     </section>
       <swiper class='collections-carousel' :class='$mq' :options='swiperOption' ref='categoriesCarousel'>
-        <swiper-slide v-for='item of items' v-bind:key='item.id'><img :src='item.image.src' /> </swiper-slide>
+        <swiper-slide :class='$mq' v-for='item of items' v-bind:key='item.id'>
+          <img :src='item.image.src' />
+          <div class='category-label'>
+            <h3>{{item.title}}</h3>
+          </div>
+        </swiper-slide>
       </swiper>
       <!-- </swiper><div v-for="item of items" v-bind:key="item.id">
         <img :src='item.image.src'  />
@@ -47,6 +52,7 @@ const client = Client.buildClient({
   storefrontAccessToken: '4774ee906ad074c16eb30a467bc0349c'
 })
 
+
 export default {
   name: 'productCarousel',
   components: {
@@ -56,7 +62,7 @@ export default {
   data () {
     return {
       swiperOption: {
-        slidesPerView:'auto',
+        slidesPerView: 'auto',
         spaceBetween: 24,
 
         navigation: {
@@ -93,6 +99,7 @@ export default {
 .collections-container {
   display: flex;
   flex-direction: column;
+  padding-bottom: 30px;
   &.lg {
     flex-direction: row;
   }
@@ -100,7 +107,7 @@ export default {
 .collections-text {
   padding: 30px 24px 24px 24px;
   &.lg {
-    padding: 276px 0vw 276px 10vw;
+    padding: 276px 10vw 0 10vw;
     width: 45vw;
   }
 }
@@ -111,20 +118,51 @@ h2 {
   padding-left: 24px;
   width: 100vw;
   &.lg {
-    width: 60vw;
-    padding: 84px;
+    width: 62.4vw;
+    padding: 84px 0;
   }
 }
 img {
-  width: 330px;
-  height: 480px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: 0 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .swiper-slide {
-  width: 330px;
-  height: 480px;
+  width: 239px;
+  height: 348px;
+  &.lg{
+    width: 330px;
+    height: 480px;
+  }
+
+  &-active div {
+    transition: background-color 0.5s;
+    background-color: $transparent-black;
+  }
 }
 
+.arrow {
+  padding: 24px 12px 0 12px;
+}
+
+.category-label {
+  width: 100%;
+  height: 60px;
+  color: white;
+  background-color: $transparent-black;
+  position: absolute;
+  bottom: 0;
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
+}
+
+h3 {
+  color: $white;
+}
 </style>
