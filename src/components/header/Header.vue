@@ -3,8 +3,16 @@
 
     <mq-layout mq="sm">
       <nav class='sm'>
-        <NavLinks/>
-        <Logo />
+        <a href="#" v-on:click.prevent="showDropDown=!showDropDown">
+          <Hamburger v-if="!showDropDown" />
+          <span v-else>X</span>
+          <transition name='slide-fade'>
+            <div v-if='showDropDown' class='mobile-links'>
+            <a class='mobile-link'  v-for='(url,title) in links' :key='url.id' href='url'><h3>{{title}}</h3></a>
+          </div>
+          </transition>
+        </a>
+        <a v-if='!showDropDown' href='/'><img class='logo' src='../../assets/logo.png' /></a>
         <Cart />
       </nav>
     </mq-layout>
@@ -12,8 +20,12 @@
     <mq-layout mq="lg">
       <nav class='lg'>
         <div>
-          <Logo />
-          <NavLinks/>
+          <a href='/'><img class='logo' src='../../assets/logo.png' /></a>
+          <ul>
+            <li v-for='(url,title) in links' :key='url.id'>
+              <a href='url'><h3>{{title}}</h3></a>
+            </li>
+          </ul>
         </div>
         <Cart />
       </nav>
@@ -25,7 +37,7 @@
 <script>
 import NavLinks from './NavLinks.vue'
 import Cart from './Cart.vue'
-import Logo from './Logo.vue'
+import Hamburger from './Hamburger.vue'
 
 export default {
   name: 'Header',
@@ -35,7 +47,18 @@ export default {
   components: {
     NavLinks,
     Cart,
-    Logo
+    Hamburger
+  },
+  data() {
+    return {
+      showDropDown: false,
+      links: {
+        Men: '#',
+        Women: '#',
+        Magazine: '#',
+        Store: '#'
+      }
+    }
   }
 }
 </script>
@@ -45,8 +68,6 @@ export default {
 .header-container {
   background-color: $transparent-gray;
   color: $black;
-  // border-bottom: 1px solid $gray;
-  // weird, this is in spec but wildly different than render. hmmm.
   z-index: 10;
   position: absolute;
   width: 100vw;
@@ -69,4 +90,43 @@ nav {
     align-items: center;
   }
 }
+.logo {
+  color: $black;
+  filter: invert(100%);
+  height: 36px;
+  width: 36px;
+}
+li {
+  display: block;
+  padding-left: 78px;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-link-container {
+  position: relative;
+}
+.mobile-links {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  // background: $white;
+}
+.mobile-link{
+  padding-right: 10vw;
+}
+.slide-fade-enter-active {
+  transition: all .6s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(-80px);
+  opacity: 0;
+}
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <svg id='cart' width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg :class='$mq' id='cart' width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
       <defs></defs>
       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -26,5 +26,9 @@ export default {
 <style lang='scss' scoped>
 #cart{
   width: 19.7px;
+  padding-right: 15px;
+  &.lg{
+    padding-right: 40px;
+  }
 }
 </style>

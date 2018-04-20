@@ -1,11 +1,15 @@
 <template>
-  <div>
+  <div class='nav-link-container'>
 
     <mq-layout mq='sm'>
-      <!-- <a href="#" v-on:click.prevent="showDropDown=!showDropDown"> -->
-      <!-- TODO: add slideout modal -->
-      <Hamburger />
-      <!-- </a> -->
+      <a href="#" v-on:click.prevent="showDropDown=!showDropDown">
+        <Hamburger />
+        <transition name='slide-fade'>
+          <div v-if='showDropDown' class='mobile-links'>
+          <a class='mobile-link'  v-for='(url,title) in links' :key='url.id' href='url'><h3>{{title}}</h3></a>
+        </div>
+        </transition>
+      </a>
     </mq-layout>
 
     <mq-layout mq='lg'>
@@ -20,23 +24,21 @@
 </template>
 
 <script>
-import NavLink from './NavLink.vue'
 import Hamburger from './Hamburger.vue'
 
 export default {
   name: 'NavLinks',
   components: {
-    NavLink,
     Hamburger
   },
-  data () {
+  data() {
     return {
       showDropDown: false,
       links: {
-        'Men': '#',
-        'Women': '#',
-        'Magazine': '#',
-        'Store': '#'
+        Men: '#',
+        Women: '#',
+        Magazine: '#',
+        Store: '#'
       }
     }
   }
@@ -52,12 +54,35 @@ a {
   position: relative;
   color: $black;
 }
-ul{
+ul {
   display: flex;
   flex-direction: row;
 }
-li{
+li {
   display: block;
   padding-left: 78px;
+}
+.nav-link-container {
+  position: relative;
+}
+.mobile-links {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  // background: $white;
+}
+.mobile-link{
+  padding-right: 10vw;
+}
+.slide-fade-enter-active {
+  transition: all .6s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(-80px);
+  opacity: 0;
 }
 </style>
