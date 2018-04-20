@@ -16,7 +16,7 @@
           </g>
         </g>
       </svg>
-      <svg class='arrow' v-on:click='swiper.slideTo(swiper.activeIndex < 2 ? swiper.activeIndex+1 :swiper.activeIndex,500, false)' width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg class='arrow' v-on:click='swiper.slideTo(swiper.activeIndex < 2 ? swiper.activeIndex+1 : 0,500, false)' width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="desktop_home" transform="translate(-185.000000, -1742.000000)" fill="#202F2F">
           <g id="Collections" transform="translate(1.000000, 1244.000000)">
             <g id="Arrows" transform="translate(142.000000, 492.000000)">
@@ -52,24 +52,17 @@ const client = Client.buildClient({
   storefrontAccessToken: '4774ee906ad074c16eb30a467bc0349c'
 })
 
-
 export default {
   name: 'productCarousel',
   components: {
     swiper,
     swiperSlide
   },
-  on: {
-    slideNextTransitionEnd: function () {
-      console.log(mySwiper.getTranslate())
-    }
-  },
   data () {
     return {
       swiperOption: {
         slidesPerView: 'auto',
         spaceBetween: 24,
-
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'

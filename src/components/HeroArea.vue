@@ -7,17 +7,51 @@
       <p :class='$mq'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
+      <div class="swiper-pagination" slot="pagination"></div>
     </article>
-    <Carousel/>
+    <swiper :options='swiperOption' ref='heroCarousel'>
+      <swiper-slide>    <img :class='$mq' src='../assets/carousel-hero.jpg' />
+          <button :class='$mq'>Start Shopping</button>
+      </swiper-slide>
+      <swiper-slide>    <img :class='$mq' src='../assets/carousel-hero.jpg' />
+          <button :class='$mq'>Start Shopping</button>
+      </swiper-slide>
+      <swiper-slide>    <img :class='$mq' src='../assets/carousel-hero.jpg' />
+          <button :class='$mq'>Start Shopping</button>
+      </swiper-slide>
+      <swiper-slide>    <img :class='$mq' src='../assets/carousel-hero.jpg' />
+          <button :class='$mq'>Start Shopping</button>
+      </swiper-slide>
+  </swiper>
   </section>
 </template>
 
 <script>
-import Carousel from './Carousel.vue'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+
 export default {
   name: 'HeroArea',
   components: {
-    Carousel
+    swiper,
+    swiperSlide
+  },
+  data () {
+    return {
+      swiperOption: {
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: '.swiper-pagination',
+    			clickable: true,
+          renderBullet: function (index, className) {
+            return '<div class="' + className + '"></div>';
+          }
+        },
+      }
+    }
   }
 }
 </script>
@@ -54,9 +88,16 @@ section {
   padding: 21px 24px 21px 24px;
   color: $black;
   &.lg {
-    padding-top: 113px;
-    padding-left: 10vw;
+    padding: 113px 10vw 0 10vw;
   }
+}
+
+img {
+  object-fit: cover;
+  object-position: 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .headline {
@@ -79,5 +120,21 @@ p {
   &.lg {
     padding-right: 10vw;
   }
+}
+</style>
+
+<style>
+.swiper-pagination-bullet {
+  margin: 24px 24px 24px 0;
+	border-radius: 0;
+	width: 5px;
+	height: 5px;
+	color:#000;
+	opacity: 1;
+	background: #DDDDDD;
+}
+.swiper-pagination-bullet-active {
+	color:#fff;
+	background: #202F2F;
 }
 </style>
