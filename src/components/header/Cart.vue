@@ -19,22 +19,22 @@
 
 <script>
 export default {
-  name: 'Cart',
+  name: 'Cart'
 }
 </script>
 
 <style lang='scss' scoped>
-#cart{
+#cart {
   width: 19.7px;
   padding: 8px;
-  &.lg{
+  &.lg {
     padding: 20px;
   }
 }
-.cart-container{
+.cart-container {
   padding: 13px 10px;
-  &:hover{
-    fill:#B6CBB8;
+  &:hover {
+    fill: #b6cbb8;
   }
 }
 </style>

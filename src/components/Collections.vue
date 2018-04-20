@@ -56,7 +56,7 @@ export default {
     swiper,
     swiperSlide
   },
-  data () {
+  data() {
     return {
       swiperOption: {
         slidesPerView: 'auto',
@@ -71,7 +71,7 @@ export default {
     }
   },
   // Fetches posts when the component is created.
-  created () {
+  created() {
     client.collection.fetchAll().then(collections => {
       collections.forEach(collection => {
         this.items.push(collection)
@@ -79,11 +79,11 @@ export default {
     })
   },
   computed: {
-    swiper () {
+    swiper() {
       return this.$refs.categoriesCarousel.swiper
     }
   },
-  mounted () {
+  mounted() {
     this.swiper.slideTo(0, 2000, false)
   }
 }
@@ -132,13 +132,13 @@ img {
   width: 239px;
   height: 348px;
   overflow: hidden;
-  &.lg{
+  &.lg {
     width: 330px;
     height: 480px;
   }
 
   &-active div {
-    transition: background-color .5s;
+    transition: background-color 0.5s;
     background-color: $transparent-black;
   }
 }
@@ -151,7 +151,7 @@ img {
   width: 100%;
   height: 60px;
   color: white;
-  transition: background-color .5s;
+  transition: background-color 0.5s;
   background-color: $transparent;
   position: absolute;
   bottom: 0;
@@ -162,11 +162,11 @@ img {
 
 img {
   width: 100%;
-  transition: .8s ;
+  transition: 0.8s;
 
-  &:hover{
+  &:hover {
     transform: scale(1.03);
-    transition: .6s ;
+    transition: 0.6s;
   }
 }
 

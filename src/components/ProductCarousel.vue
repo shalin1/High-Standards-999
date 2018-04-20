@@ -24,14 +24,14 @@ const client = Client.buildClient({
 })
 export default {
   name: 'productCarousel',
-  data () {
+  data() {
     return {
       items: [],
       errors: []
     }
   },
   // Fetches posts when the component is created.
-  created () {
+  created() {
     client.product.fetchAll().then(products => {
       products.forEach(product => {
         this.items.push(product)
@@ -42,21 +42,20 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-
 @import '../stylesheets/variables';
 h2 {
   padding: 24px 30px;
-  &.lg{
+  &.lg {
     padding: 24px 10vw;
   }
 }
-.product-carousel{
+.product-carousel {
   background-color: $light-gray;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  &.lg{
-    flex-wrap:nowrap;
+  &.lg {
+    flex-wrap: nowrap;
     max-width: 100vw;
   }
 }
@@ -66,18 +65,18 @@ h2 {
   border: 1px solid $gray;
   width: 50%;
   overflow: hidden;
-  &.lg{
+  &.lg {
     width: 25%;
   }
 }
-.item-info{
+.item-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0 12px 12px 12px;
   z-index: 10;
-  &.lg{
+  &.lg {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -87,11 +86,11 @@ h2 {
 img {
   width: 100%;
   z-index: 1;
-  transition: .8s ;
+  transition: 0.8s;
 
-  &:hover{
+  &:hover {
     transform: scale(1.05);
-    transition: .6s ;
+    transition: 0.6s;
   }
 }
 </style>

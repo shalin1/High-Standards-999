@@ -9,12 +9,12 @@
 <script>
 export default {
   name: 'Footer',
-  data () {
+  data() {
     return {
       links: {
-        'Jobs': '#',
-        'Contact': '#',
-        'FAQ': '#',
+        Jobs: '#',
+        Contact: '#',
+        FAQ: '#',
         'Shipping & Returns': '#'
       }
     }
@@ -35,7 +35,7 @@ export default {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
-  &.lg{
+  &.lg {
     align-items: center;
     height: 84px;
     padding-left: 142px;
@@ -43,11 +43,11 @@ export default {
     flex-wrap: nowrap;
   }
 }
-h3{
+h3 {
   color: $white;
   transition: 1s;
-  padding: 24px 24px 0 24px;;
-  &.lg{
+  padding: 24px 24px 0 24px;
+  &.lg {
     padding: 30px 78px 30px 0;
   }
   &:hover {
@@ -59,5 +59,4 @@ h3{
 .link-container {
   // padding:
 }
-
 </style>

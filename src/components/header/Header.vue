@@ -75,7 +75,7 @@ export default {
   position: absolute;
   width: 100vw;
   top: 0;
-  &.inverted{
+  &.inverted {
     transition: 0.8s;
     background-color: $black;
     fill: $white;
@@ -98,8 +98,8 @@ nav {
     align-items: center;
   }
 }
-.x{
-  color:$white;
+.x {
+  color: $white;
   padding-right: 2vw;
 }
 .logo {
@@ -109,24 +109,24 @@ nav {
   height: 36px;
   width: 36px;
   margin-left: 10px;
-  &:hover{
+  &:hover {
     transition: 1s;
-    filter: invert(75%)
+    filter: invert(75%);
   }
 }
 li {
   display: block;
   padding: 30px 39px;
   transition: 5s;
-  &:hover{
-    transition: .5s;
+  &:hover {
+    transition: 0.5s;
     background-color: $pistachio;
   }
 }
 ul {
   display: flex;
   flex-direction: row;
-  padding-left: 39px
+  padding-left: 39px;
 }
 
 .nav-link-container {
@@ -138,18 +138,18 @@ ul {
   align-items: center;
   justify-content: center;
 }
-.mobile-link{
+.mobile-link {
   padding: 0 5vw;
   color: $white;
 }
 .fade-enter-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .fade-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
-
 </style>

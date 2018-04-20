@@ -84,21 +84,21 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index:100;
+  z-index: 100;
 
-  &.lg{
+  &.lg {
     width: 25vw;
     height: 84px;
   }
   & h3 {
     padding-bottom: 38px;
     color: $white;
-    transition:1s;
-      &:hover{
-        color:$pistachio;
-        transition: 1s;
+    transition: 1s;
+    &:hover {
+      color: $pistachio;
+      transition: 1s;
     }
-    &.lg{
+    &.lg {
       padding: 0;
     }
   }
@@ -144,7 +144,7 @@ h3 {
 }
 p {
   &.lg {
-    padding-right: 10vw ;
+    padding-right: 10vw;
   }
 }
 div {
