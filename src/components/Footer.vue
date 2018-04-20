@@ -1,7 +1,8 @@
 <template>
   <nav class='footer-container' :class="$mq">
-      <a v-for="(url,title) in links" :key='url.id' :href='url'><h3 :class="$mq">{{title}}</h3></a>
-
+      <div v-for="(url,title) in links" :key='url.id' :class="$mq" class='link-container'>
+        <a :href='url'><h3 :class="$mq">{{title}}</h3></a>
+      </div>
   </nav>
 </template>
 
@@ -44,11 +45,19 @@ export default {
 }
 h3{
   color: $white;
-  padding-top: 24px;
-  padding-left: 24px;
+  transition: 1s;
+  padding: 24px 24px 0 24px;;
   &.lg{
     padding: 30px 78px 30px 0;
   }
+  &:hover {
+    transition: 1s;
+    color: $pistachio;
+  }
+}
+
+.link-container {
+  // padding:
 }
 
 </style>

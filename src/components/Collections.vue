@@ -102,7 +102,7 @@ export default {
 .collections-text {
   padding: 30px 24px 24px 24px;
   &.lg {
-    padding: 276px 10vw 0 10vw;
+    padding: calc(132px + 10vw) 10vw 0 9.5vw;
     width: 45vw;
   }
 }
@@ -142,7 +142,7 @@ img {
 }
 
 .arrow {
-  padding: 24px 12px 0 12px;
+  padding: 24px 12px 0 6px;
 }
 
 .category-label {
